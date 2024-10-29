@@ -1,0 +1,19 @@
+{
+  "name": "iuul-backend-nodejs-desafio-1.1",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigodefrancadev/iuul-backend-nodejs-desafio-1.1.git"
+  },
+  "author": "Rodrigo de França",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigodefrancadev/iuul-backend-nodejs-desafio-1.1/issues"
+  },
+  "homepage": "https://github.com/rodrigodefrancadev/iuul-backend-nodejs-desafio-1.1#readme",
+  "description": ""
+}
