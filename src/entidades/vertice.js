@@ -1,3 +1,5 @@
+// @ts-check
+
 export class Vertice {
     /** @type number */ #x
     /** @type number */ #y
@@ -43,6 +45,10 @@ export class Vertice {
     */
     equals(outroVertice) {
         return this.x === outroVertice.x && this.y === outroVertice.y
+    }
+
+    toString() {
+        return `(${this.x}, ${this.y})`
     }
 
 }

@@ -1,8 +1,10 @@
 {
+  "type": "module",
   "name": "iuul-backend-nodejs-desafio-1.1",
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
+    "questao1": "node src/questao1.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,8 @@
     "url": "https://github.com/rodrigodefrancadev/iuul-backend-nodejs-desafio-1.1/issues"
   },
   "homepage": "https://github.com/rodrigodefrancadev/iuul-backend-nodejs-desafio-1.1#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
 }
