@@ -58,7 +58,7 @@ class Questao1 {
     #printVertices() {
         this.#io.escreve('VÉRTICES: ');
         Array.from(this.#verticesMap.entries())
-            .forEach(([nome, vertice]) => this.#io.escreve(`\t ${nome} ${vertice.toString()}`));
+            .forEach(([nome, vertice]) => this.#io.escreve(`\t ${nome} ${vertice}`));
         this.#io.escreve('--------------------------');
     }
 
@@ -98,7 +98,7 @@ class Questao1 {
         } = this.#getVerticeEscolhidoPeloUsuario('Escolha Vértice 2', V1Nome)
 
         const distancia = V1.distanciaAte(V2)
-        this.#io.escreve(`A distância entre ${V1Nome} ${V1.toString()} e ${V2Nome} ${V2.toString()} é ${distancia}`)
+        this.#io.escreve(`A distância entre ${V1Nome} ${V1} e ${V2Nome} ${V2} é ${distancia}`)
     }
 
     #rotinaVerificaIgualdade() {
@@ -112,7 +112,7 @@ class Questao1 {
         } = this.#getVerticeEscolhidoPeloUsuario('Escolha Vértice 2', V1Nome)
 
         const saoIguais = V1.equals(V2)
-        this.#io.escreve(`Os vértices ${V1Nome} ${V1.toString()} e ${V2Nome} ${V2.toString()} são ${saoIguais ? 'iguais' : 'diferentes'}.`)
+        this.#io.escreve(`Os vértices ${V1Nome} ${V1} e ${V2Nome} ${V2} são ${saoIguais ? 'iguais' : 'diferentes'}.`)
     }
 
     #rotinaMover() {
@@ -125,7 +125,7 @@ class Questao1 {
 
         vertice.move(x, y)
 
-        this.#io.escreve(`Vértice ${verticeNome} agora posicionado em ${vertice.toString()}`)
+        this.#io.escreve(`Vértice ${verticeNome} agora posicionado em ${vertice}`)
     }
 
     /**
@@ -141,7 +141,7 @@ class Questao1 {
         if (!vertice) {
             throw new Error('Erro interno: vértice não encontrado')
         }
-        this.#io.escreve(`Vertice Selecionado: ${verticeNome} ${vertice.toString()}`)
+        this.#io.escreve(`Vertice Selecionado: ${verticeNome} ${vertice}`)
         return { verticeNome, vertice }
     }
 }
