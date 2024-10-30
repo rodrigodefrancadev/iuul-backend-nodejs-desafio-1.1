@@ -1,6 +1,6 @@
 // @ts-check
 
-import { Vertice } from "./vertice";
+import { Vertice } from "./vertice.js";
 
 const QTD_LADOS_TRIANGULO = 3;
 
@@ -72,8 +72,8 @@ export class Triangulo {
      * @returns {boolean} 
      */
     equals(outroTriangulo) {
-        const ladosDesteTriangulo = [this.#ladoA, this.#ladoB, this.#ladoC].sort((a, b) => a - b)
-        const ladosDoOutroTriangulo = [outroTriangulo.#ladoA, outroTriangulo.#ladoB, outroTriangulo.#ladoC].sort((a, b) => a - b)
+        const ladosDesteTriangulo = this.getLados().sort((a, b) => a - b)
+        const ladosDoOutroTriangulo = outroTriangulo.getLados().sort((a, b) => a - b)
 
         for (let i = 0; i < QTD_LADOS_TRIANGULO; i++) {
             if (ladosDesteTriangulo[i] !== ladosDoOutroTriangulo[i]) {
@@ -88,7 +88,7 @@ export class Triangulo {
      * @returns {'EQUILATERO' | 'ISOCELES' | 'ESCALENO'}
      */
     getTipo() {
-        const lados = [this.#ladoA, this.#ladoB, this.#ladoC];
+        const lados = this.getLados()
         const conjuntoValoresDeLados = new Set(lados);
         const quantidadeDeValoresDeLadosDistintos = conjuntoValoresDeLados.size;
 
@@ -104,8 +104,16 @@ export class Triangulo {
         }
     }
 
+    getLados() {
+        return [this.#ladoA, this.#ladoB, this.#ladoC];
+    }
+
     clone() {
         return new Triangulo(this.#Va, this.#Vb, this.#Vc);
+    }
+
+    toString() {
+        return `[${this.Va}, ${this.Vb}, ${this.Vc}]`
     }
 
 }
