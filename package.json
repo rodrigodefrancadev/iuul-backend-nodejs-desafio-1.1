@@ -6,6 +6,7 @@
   "scripts": {
     "questao1": "node src/questao1.js",
     "questao2": "node src/questao2.js",
+    "questao3": "node src/questao3.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
