@@ -3,11 +3,7 @@
 export class Aluno {
     #matricula;
     #nome;
-
-    /** @type {number | null} */
     #p1;
-
-    /** @type {number | null} */
     #p2;
 
     get matricula() { return this.#matricula; }
@@ -18,13 +14,15 @@ export class Aluno {
     /**
      * 
      * @param {string} matricula 
-     * @param {string} nome 
+     * @param {string} nome
+     * @param {(number | null)=} p1 
+     * @param {(number | null)=} p2 
      */
-    constructor(matricula, nome) {
+    constructor(matricula, nome, p1 = null, p2 = null) {
         this.#matricula = matricula;
         this.#nome = nome;
-        this.#p1 = null;
-        this.#p2 = null;
+        this.#p1 = p1;
+        this.#p2 = p2;
     }
 
     /**
