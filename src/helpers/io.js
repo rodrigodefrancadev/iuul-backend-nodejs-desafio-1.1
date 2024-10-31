@@ -14,8 +14,12 @@ export class IO {
      * @returns {string}
      */
     lerString(pergunta) {
-        const texto = this.#input(pergunta)
-        return texto
+        while (true) {
+            const texto = this.#input(pergunta)
+            if (texto !== "") {
+                return texto
+            }
+        }
     }
 
     /**
@@ -67,6 +71,6 @@ export class IO {
     }
 
     pause() {
-        this.lerString('Aperte ENTER para continuar ...')
+        this.#input('Aperte ENTER para continuar ...')
     }
 }
