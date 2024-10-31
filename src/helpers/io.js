@@ -20,14 +20,23 @@ export class IO {
 
     /**
      * @param {string} pergunta
+     * @param {{min?: number, max?: number}=} opcoes 
      * @returns {number}
      */
-    lerNumber(pergunta) {
+    lerNumber(pergunta, opcoes) {
         while (true) {
             const texto = this.lerString(pergunta)
             const num = Number(texto)
             if (isNaN(num)) {
                 this.escreve(`ERRO: o valor informado "${texto}" não é um número válido. Tente novamente.`);
+                continue;
+            }
+            if (opcoes?.min !== undefined && num < opcoes.min) {
+                this.escreve(`ERRO: o valor informado é menor que o mínimo permitido`);
+                continue;
+            }
+            if (opcoes?.max !== undefined && num > opcoes.max) {
+                this.escreve(`ERRO: o valor informado é maior que o máximo permitido`);
                 continue;
             }
             return num;
