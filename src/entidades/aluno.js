@@ -33,13 +33,13 @@ export class Aluno {
     setNota(tipoDaNota, valorDaNota) {
         switch (tipoDaNota) {
             case "P1":
-                if (this.p1 === null) {
+                if (this.p1 !== null) {
                     throw new Error('Erro: Nota P1 já foi definida para este aluno');
                 }
                 this.#p1 = valorDaNota;
                 break;
             case "P2":
-                if (this.p2 === null) {
+                if (this.p2 !== null) {
                     throw new Error('Erro: Nota P2 já foi definida para este aluno');
                 }
                 this.#p2 = valorDaNota;
