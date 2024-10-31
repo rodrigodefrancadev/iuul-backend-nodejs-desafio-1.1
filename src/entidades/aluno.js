@@ -1,7 +1,13 @@
+// @ts-check
+
 export class Aluno {
     #matricula;
     #nome;
+
+    /** @type {number | null} */
     #p1;
+
+    /** @type {number | null} */
     #p2;
 
     get matricula() { return this.#matricula; }
@@ -13,14 +19,36 @@ export class Aluno {
      * 
      * @param {string} matricula 
      * @param {string} nome 
-     * @param {number | null} p1 
-     * @param {number | null} p2 
      */
-    constructor(matricula, nome, p1, p2) {
+    constructor(matricula, nome) {
         this.#matricula = matricula;
         this.#nome = nome;
-        this.#p1 = p1;
-        this.#p2 = p2;
+        this.#p1 = null;
+        this.#p2 = null;
+    }
+
+    /**
+     * 
+     * @param {'P1' | 'P2'} tipoDaNota 
+     * @param {number} valorDaNota 
+     */
+    setNota(tipoDaNota, valorDaNota) {
+        switch (tipoDaNota) {
+            case "P1":
+                if (this.p1 === null) {
+                    throw new Error('Erro: Nota P1 já foi definida para este aluno');
+                }
+                this.#p1 = valorDaNota;
+                break;
+            case "P2":
+                if (this.p2 === null) {
+                    throw new Error('Erro: Nota P2 já foi definida para este aluno');
+                }
+                this.#p2 = valorDaNota;
+                break;
+            default:
+                throw new Error(`Tipo de Nota ${tipoDaNota} é inválido`);
+        }
     }
 
     getNF() {
