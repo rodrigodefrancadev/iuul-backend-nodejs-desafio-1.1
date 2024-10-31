@@ -21,6 +21,7 @@
   "homepage": "https://github.com/rodrigodefrancadev/iuul-backend-nodejs-desafio-1.1#readme",
   "description": "",
   "dependencies": {
+    "@faker-js/faker": "^9.1.0",
     "prompt-sync": "^4.2.0"
   }
 }
