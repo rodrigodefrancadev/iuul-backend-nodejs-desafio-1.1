@@ -7,7 +7,7 @@
     "questao1": "node src/questao1.js",
     "questao2": "node src/questao2.js",
     "questao3": "node src/questao3.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "questao4": "node src/questao4.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "description": "",
   "dependencies": {
     "@faker-js/faker": "^9.1.0",
+    "console-table-printer": "^2.12.1",
     "prompt-sync": "^4.2.0"
   }
 }

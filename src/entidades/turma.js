@@ -1,10 +1,14 @@
 // @ts-check
 
-import { Aluno } from "./aluno";
+import { Aluno } from "./aluno.js";
 
 export class Turma {
     /** @type {Aluno[]} */
     #alunos;
+
+    get alunos() {
+        return this.#alunos;
+    }
 
     constructor() {
         this.#alunos = [];
@@ -63,9 +67,5 @@ export class Turma {
         }
 
         aluno.setNota(tipoDaNota, valorDaNota);
-    }
-
-    printTurma() {
-        console.table(this.#alunos);
     }
 }
