@@ -1,3 +1,5 @@
+// @ts-check
+
 import { fakerPT_BR as faker } from '@faker-js/faker';
 import { Aluno } from "../entidades/aluno.js";
 
@@ -16,6 +18,8 @@ export class GeradorDeAlunosFake {
             const p2 = GeradorDeAlunosFake.#gerarNotaAleatoriaOuNula();
             return new Aluno(matricula, nome, p1, p2);
         })
+
+        return alunos;
     }
 
     static #gerarNotaAleatoriaOuNula() {
