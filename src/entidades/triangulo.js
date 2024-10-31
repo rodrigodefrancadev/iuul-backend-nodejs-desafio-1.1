@@ -1,8 +1,10 @@
 // @ts-check
 
+import { limitarCasasDecimais } from "../helpers/limitar-casas-decimais.js";
 import { Vertice } from "./vertice.js";
 
 const QTD_LADOS_TRIANGULO = 3;
+const MAX_CASAS_DECIMAIS_LADOS = 6;
 
 export class Triangulo {
     //vertices
@@ -49,11 +51,11 @@ export class Triangulo {
         this.#Vb = Vb;
         this.#Vc = Vc;
 
-        this.#ladoA = ladoA;
-        this.#ladoB = ladoB;
-        this.#ladoC = ladoC;
+        this.#ladoA = limitarCasasDecimais(ladoA, MAX_CASAS_DECIMAIS_LADOS);
+        this.#ladoB = limitarCasasDecimais(ladoB, MAX_CASAS_DECIMAIS_LADOS);;
+        this.#ladoC = limitarCasasDecimais(ladoC, MAX_CASAS_DECIMAIS_LADOS);;
 
-        this.#perimetro = ladoA + ladoB + ladoC;
+        this.#perimetro = this.#ladoA + this.#ladoB + this.#ladoC;
     }
 
     /**
