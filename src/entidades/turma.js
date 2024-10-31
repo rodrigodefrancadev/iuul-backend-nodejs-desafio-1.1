@@ -36,6 +36,19 @@ export class Turma {
         return aluno
     }
 
+    /**
+     * 
+     * @param {string} matricula 
+     * @returns {Aluno} aluno removido
+     */
+    removeAlunoPelaMatricula(matricula) {
+        const index = this.#alunos.findIndex(c => c.matricula === matricula);
+        if (index === -1) {
+            throw new Error(`Erro: aluno não encontrado com a matrícula ${matricula}`);
+        }
+        const [alunoRemovido] = this.#alunos.splice(index, 1);
+        return alunoRemovido;
+    }
 
     /**
      * 
@@ -52,7 +65,7 @@ export class Turma {
         aluno.setNota(tipoDaNota, valorDaNota);
     }
 
-    imprimirTurma() {
+    printTurma() {
         console.table(this.#alunos);
     }
 }
